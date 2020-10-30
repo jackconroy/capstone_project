@@ -1,0 +1,4 @@
+{
+  id: tasting_note.id,
+  keyword: tasting_note.keyword
+}

@@ -1,0 +1,6 @@
+{
+  id: vote.id,
+  user_id: vote.user_id,
+  beer_id: vote.beer_id,
+  vote_value: vote.vote_value 
+}

@@ -1,0 +1,4 @@
+{
+  user_id: user_tasting_note.user_id,
+  tasting_note_id: user_tasting_note.tasting_note_id
+}
