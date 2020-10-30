@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
 
-  before_action :authenticate_user, except: [:create]
+  before_action :authenticate_admin, except: [:create]
   
   def create
     user = User.new(
@@ -8,7 +8,8 @@ class Api::UsersController < ApplicationController
       email: params[:email],
       location: params[:location],
       password: params[:password],
-      password_confirmation: params[:password_confirmation]
+      password_confirmation: params[:password_confirmation],
+      admin: params[:admin]
     )
     if user.save
       render json: { message: "User created successfully" }, status: :created
@@ -34,6 +35,7 @@ class Api::UsersController < ApplicationController
     @user.location = params[:location] || @user.location
     @user.password = params[:password] || @user.password
     @user.password_confirmation = params[:password_confirmation] || @user.password_confirmation
+    @user.admin = params[:admin] || @user.admin
     if @user.save
       render "show.json.jb"
     else
