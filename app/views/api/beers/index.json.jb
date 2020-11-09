@@ -1,3 +1,8 @@
 @beers.map do |beer|
-  render partial: "beer.json.jb", locals: {beer: beer}
+  beer_hash = render partial: "beer.json.jb", locals: {beer: beer}
+  beer_hash[:upvotes] = beer.upvotes
+  beer_hash[:tasting_notes] = beer.tasting_notes.map do |tasting_note|
+    render partial: "api/tasting_notes/tasting_note", locals: {tasting_note: tasting_note}
+  end
+  beer_hash
 end

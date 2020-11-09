@@ -3,7 +3,7 @@ class Api::UserTastingNotesController < ApplicationController
   before_action :authenticate_user
 
   def index
-    @user_tasting_notes = UserTastingNote.all
+    @user_tasting_notes = current_user.tasting_notes
     render "index.json.jb"
   end
 

@@ -8,5 +8,13 @@ class User < ApplicationRecord
 
   has_many :votes
   has_many :beers, through: :votes
+
+  def upvoted_beers
+    beers_i_like  = []
+    votes.where(vote_value: 1).map do |vote|
+      beers_i_like << vote.beer
+    end
+    beers_i_like
+  end
   
 end

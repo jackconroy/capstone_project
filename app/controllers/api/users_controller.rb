@@ -1,9 +1,9 @@
 class Api::UsersController < ApplicationController
 
-  before_action :authenticate_admin, except: [:create]
+  # before_action :authenticate_admin, except: [:create]
   
   def create
-    user = User.new(
+    @user = User.new(
       name: params[:name],
       email: params[:email],
       location: params[:location],
@@ -11,10 +11,18 @@ class Api::UsersController < ApplicationController
       password_confirmation: params[:password_confirmation],
       admin: params[:admin]
     )
-    if user.save
-      render json: { message: "User created successfully" }, status: :created
+    if @user.save
+      # params[:tasting_note_ids] = [3, 8, 9]
+      # in the frontend, remove eval
+      eval(params[:tasting_note_ids]).each do |tasting_note_id|
+        UserTastingNote.create(
+          user_id: @user.id,
+          tasting_note_id: tasting_note_id
+        )
+      end
+      render "show.json.jb"
     else
-      render json: { errors: user.errors.full_messages }, status: :bad_request
+      render json: { errors: @user.errors.full_messages }, status: :bad_request
     end
   end
 
@@ -33,10 +41,19 @@ class Api::UsersController < ApplicationController
     @user.name = params[:name] || @user.name
     @user.email = params[:email] || @user.email
     @user.location = params[:location] || @user.location
-    @user.password = params[:password] || @user.password
-    @user.password_confirmation = params[:password_confirmation] || @user.password_confirmation
+    if params[:password] && params[:password].length > 1
+      @user.password = params[:password]
+      @user.password_confirmation = params[:password_confirmation]
+    end
     @user.admin = params[:admin] || @user.admin
     if @user.save
+      @user.user_tasting_notes.destroy_all
+      eval(params[:tasting_note_ids]).each do |tasting_note_id|
+        UserTastingNote.create(
+          user_id: @user.id,
+          tasting_note_id: tasting_note_id
+        )
+      end
       render "show.json.jb"
     else
       render json: { errors: @user.errors.full_messages }, status: :bad_request

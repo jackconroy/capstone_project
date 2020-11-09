@@ -3,5 +3,6 @@
   name: beer.name,
   brewery: beer.brewery,
   style: beer.style,
-  abv: beer.abv
+  abv: beer.abv,
+  image: beer.image
 }

@@ -1,1 +1,13 @@
-beer = render partial: "beer.json.jb", locals: {beer: @beer}
+beer_hash = render partial: "beer.json.jb", locals: {beer: @beer}
+beer_hash[:upvotes] = @beer.upvotes
+beer_hash[:tasting_notes] = @beer.tasting_notes.map do |tasting_note|
+  render partial: "api/tasting_notes/tasting_note", locals: {tasting_note: tasting_note}
+end
+if current_user
+  if current_user.votes.find_by(beer_id: @beer.id)
+    beer_hash[:my_vote] = current_user.votes.find_by(beer_id: @beer.id).vote_value
+  else
+    beer_hash[:my_vote] = 0
+  end
+end
+beer_hash

@@ -1,3 +1,9 @@
 @user_tasting_notes.map do |user_tasting_note|
-  render partial: "user_tasting_note.json.jb", locals: {user_tasting_note: user_tasting_note}
+  user_tasting_note_hash = render partial: "api/tasting_notes/tasting_note", locals: {tasting_note: user_tasting_note}
+  user_tasting_note_hash[:recommended_beers] = user_tasting_note.beers.take(5).map do |beer|
+    render partial: "api/beers/beer", locals: {beer: beer}
+  end
+  user_tasting_note_hash
 end
+
+# upgrade logic to sample instead of take
