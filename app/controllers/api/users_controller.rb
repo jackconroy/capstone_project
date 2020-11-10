@@ -13,13 +13,12 @@ class Api::UsersController < ApplicationController
     )
     if @user.save
       # params[:tasting_note_ids] = [3, 8, 9]
-      # in the frontend, remove eval
-      # eval(params[:tasting_note_ids]).each do |tasting_note_id|
-      #   UserTastingNote.create(
-      #     user_id: @user.id,
-      #     tasting_note_id: tasting_note_id
-      #   )
-      # end
+      params[:tasting_note_ids].each do |tasting_note_id|
+        UserTastingNote.create(
+          user_id: @user.id,
+          tasting_note_id: tasting_note_id
+        )
+      end
       render "show.json.jb"
     else
       render json: { errors: @user.errors.full_messages }, status: :bad_request
@@ -45,15 +44,15 @@ class Api::UsersController < ApplicationController
       @user.password = params[:password]
       @user.password_confirmation = params[:password_confirmation]
     end
-    @user.admin = params[:admin] || @user.admin
+    # @user.admin = params[:admin] || @user.admin
     if @user.save
       @user.user_tasting_notes.destroy_all
-      # eval(params[:tasting_note_ids]).each do |tasting_note_id|
-      #   UserTastingNote.create(
-      #     user_id: @user.id,
-      #     tasting_note_id: tasting_note_id
-      #   )
-      # end
+      params[:tasting_note_ids].each do |tasting_note_id|
+        UserTastingNote.create(
+          user_id: @user.id,
+          tasting_note_id: tasting_note_id
+        )
+      end
       render "show.json.jb"
     else
       render json: { errors: @user.errors.full_messages }, status: :bad_request
