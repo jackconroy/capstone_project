@@ -21,7 +21,7 @@ class Api::VotesController < ApplicationController
   end
 
   def update 
-    @vote = Vote.find(params[:id])
+    @vote = Vote.find_by(user_id: current_user.id, beer_id: params[:id])
     @vote.vote_value = params[:vote_value] || @vote.vote_value
     if @vote.save
       render "show.json.jb"

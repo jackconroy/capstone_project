@@ -34,6 +34,8 @@
 # TastingNote.create(keyword: "Malt")
 # TastingNote.create(keyword: "Sour")
 # TastingNote.create(keyword: "Balanced")
+# TastingNote.create(keyword: "Hazy")
+# TastingNote.create(keyword: "Coffee")
 
 
 # Vote.create(user_id: 1, beer_id: 1, vote_value: 1)
@@ -52,46 +54,61 @@
 # BeerTastingNote.create(beer_id: 1, tasting_note_id: 10)
 
 # BeerTastingNote.create(beer_id: 2, tasting_note_id: 1)
-# BeerTastingNote.create(beer_id: 2, tasting_note_id: 2)
+# BeerTastingNote.create(beer_id: 2, tasting_note_id: 6)
 
-# BeerTastingNote.create(beer_id: 3, tasting_note_id: 5)
-# BeerTastingNote.create(beer_id: 3, tasting_note_id: 4)
+# BeerTastingNote.create(beer_id: 28, tasting_note_id: 1)
+# BeerTastingNote.create(beer_id: 28, tasting_note_id: 2)
 
-# BeerTastingNote.create(beer_id: 4, tasting_note_id: 2)
-# BeerTastingNote.create(beer_id: 4, tasting_note_id: 7)
-# BeerTastingNote.create(beer_id: 4, tasting_note_id: 9)
+# BeerTastingNote.create(beer_id: 4, tasting_note_id: 3)
+# BeerTastingNote.create(beer_id: 4, tasting_note_id: 5)
+# BeerTastingNote.create(beer_id: 4, tasting_note_id: 8)
 
-# BeerTastingNote.create(beer_id: 5, tasting_note_id: 5)
-# BeerTastingNote.create(beer_id: 5, tasting_note_id: 5)
-# BeerTastingNote.create(beer_id: 5, tasting_note_id: 2)
+# BeerTastingNote.create(beer_id: 50, tasting_note_id: 2)
+# BeerTastingNote.create(beer_id: 50, tasting_note_id: 3)
+# BeerTastingNote.create(beer_id: 50, tasting_note_id: 12)
 
 # BeerTastingNote.create(beer_id: 39, tasting_note_id: 3)
 # BeerTastingNote.create(beer_id: 39, tasting_note_id: 7)
-# BeerTastingNote.create(beer_id: 39, tasting_note_id: 9)
+# BeerTastingNote.create(beer_id: 39, tasting_note_id: 12)
 
 # BeerTastingNote.create(beer_id: 272, tasting_note_id: 1)
-# BeerTastingNote.create(beer_id: 272, tasting_note_id: 5)
+# BeerTastingNote.create(beer_id: 272, tasting_note_id: 6)
 # BeerTastingNote.create(beer_id: 272, tasting_note_id: 10)
 
-# BeerTastingNote.create(beer_id: 298, tasting_note_id: 6)
-# BeerTastingNote.create(beer_id: 298, tasting_note_id: 7)
-# BeerTastingNote.create(beer_id: 298, tasting_note_id: 2)
-# BeerTastingNote.create(beer_id: 298, tasting_note_id: 9)
-# BeerTastingNote.create(beer_id: 298, tasting_note_id: 1)
+# BeerTastingNote.create(beer_id: 276, tasting_note_id: 1)
+# BeerTastingNote.create(beer_id: 276, tasting_note_id: 6)
+# BeerTastingNote.create(beer_id: 276, tasting_note_id: 11)
 
-# BeerTastingNote.create(beer_id: 721, tasting_note_id: 3)
-# BeerTastingNote.create(beer_id: 721, tasting_note_id: 5)
+# BeerTastingNote.create(beer_id: 343, tasting_note_id: 1)
+# BeerTastingNote.create(beer_id: 343, tasting_note_id: 4)
 
-# BeerTastingNote.create(beer_id: 899, tasting_note_id: 8)
-# BeerTastingNote.create(beer_id: 899, tasting_note_id: 5)
+# BeerTastingNote.create(beer_id: 356, tasting_note_id: 4)
+# BeerTastingNote.create(beer_id: 343, tasting_note_id: 10)
 
-# BeerTastingNote.create(beer_id: 605, tasting_note_id: 1)
-# BeerTastingNote.create(beer_id: 605, tasting_note_id: 2)
-# BeerTastingNote.create(beer_id: 605, tasting_note_id: 10)
+# BeerTastingNote.create(beer_id: 392, tasting_note_id: 8)
+# BeerTastingNote.create(beer_id: 343, tasting_note_id: 4)
 
-# BeerTastingNote.create(beer_id: 907, tasting_note_id: 5)
-# BeerTastingNote.create(beer_id: 907, tasting_note_id: 4)
+# BeerTastingNote.create(beer_id: 416, tasting_note_id: 1)
+# BeerTastingNote.create(beer_id: 416, tasting_note_id: 4)
+# BeerTastingNote.create(beer_id: 416, tasting_note_id: 10)
 
+# BeerTastingNote.create(beer_id: 477, tasting_note_id: 5)
+# BeerTastingNote.create(beer_id: 477, tasting_note_id: 6)
+# BeerTastingNote.create(beer_id: 477, tasting_note_id: 11)
+
+# BeerTastingNote.create(beer_id: 495, tasting_note_id: 2)
+# BeerTastingNote.create(beer_id: 495, tasting_note_id: 8)
+
+# BeerTastingNote.create(beer_id: 81, tasting_note_id: 1)
+# BeerTastingNote.create(beer_id: 81, tasting_note_id: 6)
+# BeerTastingNote.create(beer_id: 81, tasting_note_id: 11)
+
+# BeerTastingNote.create(beer_id: 240, tasting_note_id: 4)
+# BeerTastingNote.create(beer_id: 240, tasting_note_id: 10)
+
+# BeerTastingNote.create(beer_id: 393, tasting_note_id: 3)
+# BeerTastingNote.create(beer_id: 393, tasting_note_id: 4)
+# BeerTastingNote.create(beer_id: 393, tasting_note_id: 8)
 
 # UserTastingNote.create(user_id: 1, tasting_note_id: 1)
 # UserTastingNote.create(user_id: 1, tasting_note_id: 4)
