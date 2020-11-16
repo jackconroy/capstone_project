@@ -1,7 +1,7 @@
 class Api::BeersController < ApplicationController
 
   def index
-    @beers = Beer.limit(20)
+    @beers = Beer.limit(100)
     render "index.json.jb"
   end
 
