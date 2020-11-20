@@ -8,7 +8,7 @@ class Beer < ApplicationRecord
   validates :name, uniqueness: true
   validates :image, presence: true
 
-  #Might not need this on here! But keep it so maybe you can do a test if you need to seed again!
+  
   def self.brewery_db_seed
     Beer.destroy_all
     23.times do |index|
@@ -39,6 +39,16 @@ class Beer < ApplicationRecord
 
   def self.remove_beers_without_image
     beers = Beer.where(image: nil)
+    beers.destroy_all
+  end
+
+  def self.remove_beers_without_abv
+    beers = Beer.where(abv: nil)
+    beers.destroy_all
+  end
+
+  def self.remove_beers_without_style
+    beers = Beer.where(style: nil)
     beers.destroy_all
   end
 
